@@ -16,21 +16,21 @@ share_updated: 2026-09-27T09:38:22+02:00
 
 |Imię i nazwisko|Nr albumu|Rola w zespole|
 |---|---|---|
-||||
-||||
-||||
+|Maciej Lewandowski|31831|TBA|
+|Marcel Krzysztoń|31889|TBA|
+|Viachaslau Lukashonak|30597|TBA|
 
 Rola to nie stanowisko, tylko deklaracja, za co ta osoba odpowiada: dane, implementacja, ewaluacja, dokumentacja, koordynacja.
 
 ## 2. Tytuł projektu
 
-**Po polsku:**
+**Po polsku: Wykrywanie oszustw w transakcjach**
 
-**Po angielsku:**
+**Po angielsku: Transactions fraud detection**
 
 ## 3. Problem
 
-_Co system ma robić i dla kogo. Opis sytuacji, nie nazwy technologii. 3–5 zdań._
+System do wykrywania oszustw i prób wyłudzeń w transakcjach. System ma być dostępny zarówno dla dużych firm i osób fizycznych.
 
 ## 4. Dlaczego zwykły algorytm nie wystarczy
 
@@ -38,9 +38,9 @@ _Wskażcie jeden z trzech powodów omawianych na zajęciach i uzasadnijcie:_
 
 - [ ] nie umiemy zapisać reguły krok po kroku
 - [ ] przepis istnieje, ale jest obliczeniowo za drogi
-- [ ] reguł jest za dużo i zmieniają się w czasie
+- [x] reguł jest za dużo i zmieniają się w czasie
 
-_Uzasadnienie, 2–3 zdania:_
+Uzasadnienie, 2–3 zdania: Oszustwa to "dziedzina", która ciągle się zmienia. Praktycznie codziennie wymyślane są nowe sposoby kradzieży w sieci. Z tego tez powodu niemożliwym jest stworzenie programu o stałych parametrach. 
 
 ---
 
@@ -56,36 +56,36 @@ _Uzasadnienie, 2–3 zdania:_
 - [ ] klasyczne uczenie maszynowe
 - [ ] inne:
 
-_Dlaczego akurat ta technologia pasuje do tego problemu, 2–3 zdania:_
+Dlaczego akurat ta technologia pasuje do tego problemu, 2–3 zdania:
 
 ## 6. Dane
 
 |||
 |---|---|
-|Źródło||
-|Rozmiar i format||
-|Czy są już dostępne?|tak / nie|
-|Jeśli nie — plan pozyskania||
+|Źródło|https://www.kaggle.com/datasets/aryan208/financial-transactions-dataset-for-fraud-detection?fbclid=IwY2xjawUvnZhleHRuA2FlbQIxMQBwZG9mA3NydGMGYXBwX2lkATAAAR7dS7mgtGYGkN6jzpgveyKJ-lT2s4REfj_2ME1Dt5VzpMUE2QE5tzZm4Pw9EA_aem_THEzvLfiKLWWLFNshCD76A|
+|Rozmiar i format|.csv - 795.06MB|
+|Czy są już dostępne?|tak |
+|Jeśli nie — plan pozyskania|n/a|
 
 ## 7. Stos technologiczny
 
-_Język, biblioteki, środowisko uruchomieniowe. Pamiętajcie: wszystko ma działać na CPU, bez karty graficznej._
+Język, biblioteki, środowisko uruchomieniowe. Pamiętajcie: wszystko ma działać na CPU, bez karty graficznej.
 
 ## 8. Kryterium sukcesu
 
-_Po czym poznamy, że projekt działa. Jaka metryka, jaki próg. Liczba, nie deklaracja._
+Po czym poznamy, że projekt działa. Jaka metryka, jaki próg. Liczba, nie deklaracja.
 
 ## 9. Zakres minimalny
 
-_Co powstanie na pewno. To jest obietnica, z której będziecie rozliczeni._
+System potrafiący wykryć i powiadomić o próbie oszustw. 
 
 ## 10. Zakres opcjonalny
 
-_Co dorobicie, jeśli starczy czasu. Brak realizacji tej części nie obniża oceny._
+Frontend umozliwiający płynne użytkowanie programu. 
 
 ## 11. Repozytorium
 
-_Link:_
+Link: https://github.com/maciejlewandowskii/financial-fraud-detection
 
 ## 12. Główne ryzyko i plan awaryjny
 
