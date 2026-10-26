@@ -62,14 +62,14 @@ Dlaczego akurat ta technologia pasuje do tego problemu, 2–3 zdania:
 
 |||
 |---|---|
-|Źródło|https://www.kaggle.com/datasets/aryan208/financial-transactions-dataset-for-fraud-detection?fbclid=IwY2xjawUvnZhleHRuA2FlbQIxMQBwZG9mA3NydGMGYXBwX2lkATAAAR7dS7mgtGYGkN6jzpgveyKJ-lT2s4REfj_2ME1Dt5VzpMUE2QE5tzZm4Pw9EA_aem_THEzvLfiKLWWLFNshCD76A|
+|Źródło|https://www.kaggle.com/competitions/ieee-fraud-detection?fbclid=IwY2xjawVMo1JleHRuA2FlbQIxMQBwZG9mA3NydGMGYXBwX2lkATAAAR4sxU8qFMqFMHSk1Ffs0wVBW4fAGD61Sp0GSqy_t8AimIOZd9wliT1-D4YrKw_aem_6PlxMj9-8-V9Ei-DXI7Vpw|
 |Rozmiar i format|.csv - 795.06MB|
 |Czy są już dostępne?|tak |
 |Jeśli nie — plan pozyskania|n/a|
 
 ## 7. Stos technologiczny
 
-Język, biblioteki, środowisko uruchomieniowe. Pamiętajcie: wszystko ma działać na CPU, bez karty graficznej.
+Rust, Tauri
 
 ## 8. Kryterium sukcesu
 
@@ -81,7 +81,7 @@ System potrafiący wykryć i powiadomić o próbie oszustw.
 
 ## 10. Zakres opcjonalny
 
-Frontend umozliwiający płynne użytkowanie programu. 
+Frontend umożliwiający płynne użytkowanie programu. 
 
 ## 11. Repozytorium
 
@@ -89,18 +89,18 @@ Link: https://github.com/maciejlewandowskii/financial-fraud-detection
 
 ## 12. Główne ryzyko i plan awaryjny
 
-_Co najprawdopodobniej pójdzie nie tak i co wtedy zrobicie._
+_Model będzie niedotrenowany. Trzeba będzie znaleźć korelację błedów w datasecie._
 
 ## 13. Podział pracy w czasie
 
 |Etap|Kto|Szacowany czas|
 |---|---|---|
-|Dane i przygotowanie|||
-|Implementacja|||
-|Eksperymenty i ewaluacja|||
-|Dokumentacja PL|||
-|Dokumentacja EN|||
-|Prezentacja|||
+|Dane i przygotowanie|Maciej Lewandowski, Viachaslau Lukashonak|10|
+|Implementacja|Maciej Lewandowski, Viachaslau Lukashonak|10|
+|Eksperymenty i ewaluacja|Maciej Lewandowski|5|
+|Dokumentacja PL|Marcel Krzysztoń|3|
+|Dokumentacja EN|Marcel Krzysztoń|3|
+|Prezentacja|Marcel Krzysztoń|2|
 |**Razem na osobę**||**28–30 h**|
 
 ---
