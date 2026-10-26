@@ -50,7 +50,7 @@ Uzasadnienie, 2–3 zdania: Oszustwa to "dziedzina", która ciągle się zmienia
 
 ## 5. Technologia SI
 
-- [ ] sieć neuronowa
+- [x] sieć neuronowa
 - [ ] system ekspertowy / wnioskowanie regułowe
 - [ ] algorytm genetyczny
 - [ ] klasyczne uczenie maszynowe
