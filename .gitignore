@@ -1,0 +1,24 @@
+# Rust
+/target/
+
+# Node / Tauri
+node_modules/
+/app/src-tauri/gen/schemas/
+
+# Datasety i wagi modeli (za duże do gita)
+/data/
+*.csv
+!/sample/*.csv
+*.mpk
+*.bin
+*.onnx
+
+# Sekrety
+.env
+.env.*
+kaggle.json
+
+# Edytory i system
+.vscode/
+.zed/
+.DS_Store

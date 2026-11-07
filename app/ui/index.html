@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wykrywanie oszustw</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="app-bar">
+    <div>
+      <h1>Wykrywanie oszustw w transakcjach</h1>
+      <p class="subtitle" id="model-name">—</p>
+    </div>
+    <div class="dataset">
+      <span id="dataset-status" class="chip">Dataset nie wybrany</span>
+      <button id="pick-dataset" type="button" class="btn accent">Wybierz CSV</button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <div class="main-col">
+      <section class="card">
+        <div class="card-head">
+          <div>
+            <h2>Rekordy w datasecie</h2>
+            <p class="hint">Kliknij wiersz, żeby sprawdzić go modelem.</p>
+          </div>
+          <div class="toolbar">
+            <label class="switch"><input type="checkbox" id="only-fraud" disabled><span></span>Tylko oszustwa</label>
+            <button id="random-tx" type="button" class="btn outlined" disabled>Losuj</button>
+          </div>
+        </div>
+
+        <p id="browser-empty" class="empty">Wybierz plik CSV z datasetem (przycisk u góry).</p>
+        <div id="browser-body" hidden>
+          <div class="table-wrap">
+            <table>
+              <thead><tr id="table-head"></tr></thead>
+              <tbody id="rows"></tbody>
+            </table>
+          </div>
+          <div class="pager">
+            <span id="range" class="hint"></span>
+            <div class="pager-nav">
+              <button id="prev-page" type="button" class="btn text">‹ Poprzednia</button>
+              <label class="page-input">Strona <input id="page-number" type="number" min="1" value="1"> z <span id="page-count">1</span></label>
+              <button id="next-page" type="button" class="btn text">Następna ›</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <form id="tx-form" class="card" autocomplete="off">
+        <div class="card-head">
+          <div>
+            <h2>Szczegóły transakcji</h2>
+            <p class="hint">Najważniejsze kolumny IEEE-CIS. Puste pole = brak wartości w datasecie.</p>
+          </div>
+          <button type="submit" class="btn filled">Sprawdź</button>
+        </div>
+
+        <div id="main-fields" class="grid"></div>
+        <details id="extra" hidden>
+          <summary>Pozostałe kolumny (<span id="extra-count">0</span>)</summary>
+          <div id="extra-fields" class="grid"></div>
+        </details>
+      </form>
+    </div>
+
+    <aside class="side">
+      <section class="card result">
+        <h2>Wynik modelu</h2>
+        <p id="result-empty" class="empty">Wybierz rekord z tabeli, wylosuj go albo wypełnij formularz i kliknij „Sprawdź”.</p>
+        <div id="result-body" hidden>
+          <p id="result-id" class="hint"></p>
+          <div id="verdict" class="verdict"></div>
+          <p class="percent"><span id="probability"></span><small>prawdopodobieństwo oszustwa</small></p>
+          <div class="meter"><div id="meter-fill"></div></div>
+          <div id="truth" class="truth" hidden>
+            <p class="hint">Etykieta w datasecie</p>
+            <p id="truth-label"></p>
+            <p id="truth-match"></p>
+          </div>
+        </div>
+      </section>
+      <p id="error" class="error" hidden></p>
+    </aside>
+  </main>
+
+  <script src="api.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
