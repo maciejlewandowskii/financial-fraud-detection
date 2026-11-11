@@ -1,0 +1,15 @@
+[package]
+name = "fraud-train"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+fraud-features.workspace = true
+fraud-model.workspace = true
+fraud-predict.workspace = true
+thiserror.workspace = true
+burn = { workspace = true, features = ["flex", "autodiff", "store", "train", "tui"] }
+clap.workspace = true
+fastrand.workspace = true
+serde.workspace = true
+serde_json.workspace = true

@@ -1,9 +1,0 @@
-[package]
-name = "fraud-core"
-version = "0.1.0"
-edition = "2021"
-
-[dependencies]
-csv = "1"
-fastrand = "2"
-serde = { version = "1", features = ["derive"] }

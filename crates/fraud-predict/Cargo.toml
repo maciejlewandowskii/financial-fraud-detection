@@ -1,0 +1,12 @@
+[package]
+name = "fraud-predict"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+fraud-features.workspace = true
+fraud-model.workspace = true
+thiserror.workspace = true
+burn = { workspace = true, features = ["flex", "store"] }
+serde.workspace = true
+serde_json.workspace = true

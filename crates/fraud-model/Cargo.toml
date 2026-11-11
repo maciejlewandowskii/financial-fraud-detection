@@ -1,0 +1,8 @@
+[package]
+name = "fraud-model"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+thiserror.workspace = true
+burn = { workspace = true, features = ["store", "train"] }

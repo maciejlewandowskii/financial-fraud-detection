@@ -1,0 +1,10 @@
+[package]
+name = "fraud-browser"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+thiserror.workspace = true
+csv.workspace = true
+fastrand.workspace = true
+serde.workspace = true

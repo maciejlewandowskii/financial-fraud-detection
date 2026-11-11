@@ -1,9 +1,27 @@
 [workspace]
-resolver = "2"
+resolver = "3"
 members = ["crates/*", "app/src-tauri"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+
+[workspace.dependencies]
+fraud-features = { path = "crates/fraud-features" }
+fraud-model = { path = "crates/fraud-model" }
+fraud-predict = { path = "crates/fraud-predict" }
+fraud-browser = { path = "crates/fraud-browser" }
+burn = "0.22.0"
+thiserror = "2"
+clap = { version = "4", features = ["derive"] }
+csv = "1"
+fastrand = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+[profile.dev]
+debug = "line-tables-only"
 
 [profile.dev.package."*"]
 opt-level = 3
-
-[profile.dev.package.fraud-core]
-opt-level = 3
+debug = false
