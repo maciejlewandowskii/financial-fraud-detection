@@ -22,3 +22,8 @@ kaggle.json
 .vscode/
 .zed/
 .DS_Store
+.idea/
+
+# Wytrenowany model
+/artifacts/
+*.bpk
