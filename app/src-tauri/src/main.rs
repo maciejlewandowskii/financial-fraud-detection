@@ -2,18 +2,23 @@
 
 mod commands;
 
-use std::sync::Mutex;
+use std::path::PathBuf;
 
 use commands::AppState;
-use fraud_core::HeuristicModel;
+use fraud_predict::Predictor;
+
+fn model_dir() -> PathBuf {
+    std::env::var_os("FRAUD_MODEL_DIR")
+        .map(PathBuf::from)
+        .unwrap_or_else(|| PathBuf::from(env!("CARGO_MANIFEST_DIR")).join("../../artifacts"))
+}
 
 fn main() {
+    let predictor = Predictor::load(&model_dir()).map_err(|e| {
+        format!("Brak wytrenowanego modelu w {} ({e}). Uruchom: cargo run -p fraud-train --release", model_dir().display())
+    });
     tauri::Builder::default()
-        .plugin(tauri_plugin_dialog::init())
-        .manage(AppState {
-            model: Box::new(HeuristicModel),
-            dataset: Mutex::new(None),
-        })
+        .manage(AppState { predictor, dataset: Default::default() })
         .invoke_handler(tauri::generate_handler![
             commands::model_info,
             commands::predict,

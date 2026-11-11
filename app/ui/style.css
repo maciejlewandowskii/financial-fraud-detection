@@ -249,7 +249,6 @@ input::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
 .btn:disabled { opacity: 0.38; cursor: not-allowed; }
 .btn.filled { background: var(--primary); color: var(--on-primary); }
 .btn.filled:hover:not(:disabled) { box-shadow: var(--elevation); }
-.btn.accent { background: var(--primary); color: var(--on-primary); }
 .btn.outlined { background: transparent; color: var(--primary); border-color: var(--primary); }
 .btn.text { height: 32px; padding: 0 12px; background: transparent; color: var(--primary); }
 .btn.text:hover:not(:disabled) { background: color-mix(in srgb, var(--primary) 8%, transparent); filter: none; }

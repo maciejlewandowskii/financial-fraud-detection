@@ -1,13 +1,13 @@
 [package]
 name = "fraud-detection-app"
-version = "0.1.0"
-edition = "2021"
+version.workspace = true
+edition.workspace = true
 
 [build-dependencies]
 tauri-build = { version = "2", features = [] }
 
 [dependencies]
-fraud-core = { path = "../../crates/fraud-core" }
-serde = { version = "1", features = ["derive"] }
+fraud-browser.workspace = true
+fraud-predict.workspace = true
+serde.workspace = true
 tauri = { version = "2", features = [] }
-tauri-plugin-dialog = "2"

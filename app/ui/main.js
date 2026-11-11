@@ -1,5 +1,4 @@
 const PAGE_SIZE = 15;
-const DATASET_KEY = "datasetPath";
 const ID = "TransactionID";
 const MAIN_FIELDS = [
   { col: "TransactionID", label: "ID transakcji" },
@@ -193,12 +192,11 @@ function selectRow(row) {
   check();
 }
 
-async function loadDataset(path, saved = false) {
+async function loadDataset() {
   showError("");
   $("dataset-status").textContent = "Indeksowanie…";
-  $("pick-dataset").disabled = true;
   try {
-    const info = await api.openDataset(path);
+    const info = await api.openDataset();
     const name = info.path.split(/[\\/]/).pop();
     $("dataset-status").textContent =
       `${name} · ${fmtInt.format(info.rows)} rekordów · ${fmtInt.format(info.fraud_rows)} oszustw`;
@@ -209,22 +207,14 @@ async function loadDataset(path, saved = false) {
     $("browser-body").hidden = false;
     $("random-tx").disabled = false;
     $("only-fraud").disabled = false;
-    try { localStorage.setItem(DATASET_KEY, path); } catch {}
     state.selected = null;
     await loadPage(0);
   } catch (err) {
-    $("dataset-status").textContent = "Dataset nie wybrany";
-    if (saved) try { localStorage.removeItem(DATASET_KEY); } catch {}
-    showError(saved ? `Nie znaleziono ostatnio używanego pliku, wybierz CSV ponownie. (${err})` : err);
-  } finally {
-    $("pick-dataset").disabled = false;
+    $("dataset-status").textContent = "Brak danych";
+    $("browser-empty").textContent = "Nie udało się wczytać danych treningowych.";
+    showError(err);
   }
 }
-
-$("pick-dataset").addEventListener("click", async () => {
-  const path = await api.pickCsv();
-  if (path) await loadDataset(path);
-});
 
 $("random-tx").addEventListener("click", async () => {
   showError("");
@@ -262,6 +252,4 @@ api.modelInfo().then((info) => {
   $("model-name").textContent = `Model: ${info.name}`;
 });
 
-let savedPath = null;
-try { savedPath = localStorage.getItem(DATASET_KEY); } catch {}
-if (savedPath) loadDataset(savedPath, true);
+loadDataset();
